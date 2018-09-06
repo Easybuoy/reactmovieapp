@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Fa } from 'mdbreact';
+import {  Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Fa } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import './Navigation.css';
+// Container,
 class Navigation extends React.Component {
   constructor(props) {
       super(props);
@@ -18,12 +19,12 @@ onClick(){
 }
 
 render() {
-  const bgPink = {backgroundColor: '#ec407a'}
-  const container = {height: 1300}
+  const bgBlue = {backgroundColor: '#007bff'}
+//   const container = {margin: 50}
     return(
-      <div>
+      <div className="navbar">
         <Router>
-        <Navbar style={bgPink} dark expand="md" scrolling fixed="top">
+        <Navbar style={bgBlue} dark expand="md" scrolling fixed="top">
           <NavbarBrand href="/">
               <strong>Navbar</strong>
           </NavbarBrand>
@@ -57,12 +58,12 @@ render() {
           </Collapse>
         </Navbar>
         </Router>
-        <Container style={container} className="text-center mt-5">
+        {/* <Container style={container} className="text-center mt-5">
           <h2>This Navbar is fixed</h2>
           <h5>It will always stay visible on the top, even when you scroll do </h5>
           <br/>
           <p>Full page intro with background image will be always displayfull screen mode, regardless of device </p>
-        </Container>
+        </Container> */}
       </div>
     );
   }
