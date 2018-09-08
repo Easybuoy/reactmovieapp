@@ -26,22 +26,22 @@ render() {
         <Router>
         <Navbar style={bgBlue} dark expand="md" scrolling fixed="top">
           <NavbarBrand href="/">
-              <strong>Navbar</strong>
+              <strong>Izzy</strong>
           </NavbarBrand>
           <NavbarToggler onClick={ this.onClick } />
           <Collapse isOpen = { this.state.collapse } navbar>
             <NavbarNav left>
               <NavItem active>
-                  <NavLink to="#">Home</NavLink>
+                  <NavLink to="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink to="#">Features</NavLink>
+                  <NavLink to="#">Movies</NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink to="#">Pricing</NavLink>
+                  <NavLink to="#">TV Series</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="#">Options</NavLink>
+                <NavLink to="/about">About</NavLink>
               </NavItem>
             </NavbarNav>
             <NavbarNav right>
