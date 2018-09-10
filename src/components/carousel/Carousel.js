@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import  {Carousel, CarouselCaption, CarouselInner, CarouselItem, View, Mask, Container } from 'mdbreact';
+import  {Carousel, CarouselCaption, CarouselInner, CarouselItem, View, Mask, Container, Button } from 'mdbreact';
+// import { Link } from 'react-router-dom';
 
 class CarouselPage extends Component {
   render(){
@@ -19,7 +20,10 @@ class CarouselPage extends Component {
                 <Mask overlay="black-light"></Mask>
               </View>
               <CarouselCaption>
-                <h3 className="h3-responsive">Light mask</h3>
+                <h3 className="h3-responsive">View More</h3>
+                {/* <Link to= "/chei"><Button color="elegant"> Primary</Button></Link> */}
+
+
                 <p>First text</p>
               </CarouselCaption>
             </CarouselItem>
