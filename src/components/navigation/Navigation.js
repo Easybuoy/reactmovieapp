@@ -1,6 +1,5 @@
 import React from 'react';
 import {  Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Fa } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
 import './Navigation.css';
 // Container,
 class Navigation extends React.Component {
@@ -23,7 +22,6 @@ render() {
 //   const container = {margin: 50}
     return(
       <div className="navbar">
-        <Router>
         <Navbar style={bgBlue} dark expand="md" scrolling fixed="top">
           <NavbarBrand href="/">
               <strong>Izzy</strong>
@@ -35,10 +33,10 @@ render() {
                   <NavLink to="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink to="#">Movies</NavLink>
+                  <NavLink to="movies">Movies</NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink to="#">TV Series</NavLink>
+                  <NavLink to="tvseries">TV Series</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/about">About</NavLink>
@@ -57,7 +55,6 @@ render() {
             </NavbarNav>
           </Collapse>
         </Navbar>
-        </Router>
         {/* <Container style={container} className="text-center mt-5">
           <h2>This Navbar is fixed</h2>
           <h5>It will always stay visible on the top, even when you scroll do </h5>
