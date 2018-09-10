@@ -18,13 +18,13 @@ class FooterPage extends React.Component {
                         {/* action="https://formspree.io/" */}
                         <form method="POST" >
                         <label htmlFor="from" className="white-text">From</label>
-                        <input type="email" id="from" className="form-control"/>
+                        <input type="email" id="from" className="form-control" required/>
                         <br/>
                         <label htmlFor="to" className="white-text">To</label>
-                        <input type="text" id="to" className="form-control" value="Ezekiel Ekunola"/>
+                        <input type="text" id="to" className="form-control" value="Ezekiel Ekunola" readOnly/>
                         <br />
                         <label htmlFor="message" className="white-text">Message</label>
-                        <textarea type="text" id="message" className="form-control" rows="3"></textarea>
+                        <textarea type="text" id="message" className="form-control" rows="3" minLength="50" maxLength="500" required></textarea>
 
                         <div className="text-center mt-4">
                             <button className="btn btn-outline-purple" type="submit">Send<i className="fa fa-paper-plane-o ml-2"></i></button>

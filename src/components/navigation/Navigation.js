@@ -1,6 +1,8 @@
 import React from 'react';
 import {  Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Fa } from 'mdbreact';
 import './Navigation.css';
+import navigationimg from './navigationimg.JPG';
+
 // Container,
 class Navigation extends React.Component {
   constructor(props) {
@@ -24,7 +26,8 @@ render() {
       <div className="navbar">
         <Navbar style={bgBlue} dark expand="md" scrolling fixed="top">
           <NavbarBrand href="/">
-              <strong>Izzy</strong>
+              <strong><img src={navigationimg} alt="navigationimg"  style={{width:'50px', height: '50px', borderRadius: '50%'}}></img>
+</strong>
           </NavbarBrand>
           <NavbarToggler onClick={ this.onClick } />
           <Collapse isOpen = { this.state.collapse } navbar>
