@@ -44,14 +44,15 @@ render() {
             </NavbarNav>
             <NavbarNav right>
               <NavItem>
-                <NavLink to="#"><Fa icon="facebook" /></NavLink>
+                <NavLink target="_blank" to="https://github.com/easybuoy"><Fa icon="github" /></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="#"><Fa icon="twitter" /></NavLink>
+                <NavLink target="_blank" to="https://codepen.io/easybuoy-the-flexboxer/"><Fa icon="codepen" /></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="#"><Fa icon="instagram" /></NavLink>
+                <NavLink to="/www.twitter.com/easybuoy/"><Fa icon="twitter" /></NavLink>
               </NavItem>
+              
             </NavbarNav>
           </Collapse>
         </Navbar>

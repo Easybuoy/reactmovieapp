@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row, Footer, Animation } from 'mdbreact';
+import { Col, Container, Row, Footer, Animation, Input } from 'mdbreact';
 import tmdbimg from './tmdb.png';
 
 class FooterPage extends React.Component {
@@ -13,13 +13,26 @@ class FooterPage extends React.Component {
                         <p>Here you can use rows and columns here to organize your footer content.</p>
                     </Col>
                     <Col sm="4">
-                        <h5 className="title">Links</h5>
-                        <ul>
-                        <li className="list-unstyled"><a href="#!">Link 1</a></li>
-                        <li className="list-unstyled"><a href="#!">Link 2</a></li>
-                        <li className="list-unstyled"><a href="#!">Link 3</a></li>
-                        <li className="list-unstyled"><a href="#!">Link 4</a></li>
-                        </ul>
+                        <h5 className="title text-center">Contact</h5>
+                        <div className="">
+                        {/* action="https://formspree.io/" */}
+                        <form method="POST" >
+                        <label htmlFor="from" className="white-text">From</label>
+                        <input type="email" id="from" className="form-control"/>
+                        <br/>
+                        <label htmlFor="to" className="white-text">To</label>
+                        <input type="text" id="to" className="form-control" value="Ezekiel Ekunola"/>
+                        <br />
+                        <label htmlFor="message" className="white-text">Message</label>
+                        <textarea type="text" id="message" className="form-control" rows="3"></textarea>
+
+                        <div className="text-center mt-4">
+                            <button className="btn btn-outline-purple" type="submit">Send<i className="fa fa-paper-plane-o ml-2"></i></button>
+                        </div>
+                        </form>
+
+                        </div>
+                        
                     </Col>
                     <Col sm="4">
                     <Animation type="slideInRight">
