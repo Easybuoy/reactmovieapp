@@ -69,13 +69,12 @@ componentDidMount(){
         // });
 
         return(
-          <Container fluid>
-            {/* <h4 className="mt-5 mb-2">Basic example</h4> */}
+          <Container >
             <Carousel
               activeItem={1}
               length={20}
               showControls={true}
-              showIndicators={false}
+              showIndicators={true}
               className="z-depth-1">
               <CarouselInner>
 
@@ -104,8 +103,7 @@ componentDidMount(){
 
           }) } */}
           
-{/* <div class="carousel-item"><div class="view"><img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg" alt="Third slide"><div class="mask rgba-black-slight"></div></div><div class="carousel-caption"><h3 class="h3-responsive">Slight mask</h3><p>Third text</p></div></div> */}
-              </CarouselInner>
+            </CarouselInner>
             </Carousel>
           </Container>
         );
@@ -114,7 +112,6 @@ componentDidMount(){
         
 
       }
-      // console.log(url)
 
     }else if(this.state.error){
       console.log('unable to fetch now!!');
