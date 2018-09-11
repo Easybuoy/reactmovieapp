@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import  {Carousel, CarouselCaption, CarouselInner, CarouselItem, View, Mask, Container, Button } from 'mdbreact';
 import TMDB_API_KEY from '../../config/keys';
+import CarouselItemList from './CarouselItemList';
 // import { Link } from 'react-router-dom';
 
 class CarouselPage extends Component {
@@ -8,6 +9,7 @@ class CarouselPage extends Component {
     super(props);
     this.state = {
         now_playing: {},
+        error: {}
     };
     // this.onClick = this.onClick.bind(this);
 }
@@ -26,10 +28,13 @@ componentDidMount(){
           
         }).then(res => res.json()
         .then(data => {
-          this.setState({now_playing: data})
+          this.setState({now_playing: data});
           console.log(this.state);
         })  
-      ).catch(err =>console.log(err))
+      ).catch(err =>{
+        this.setState({error: err});
+        console.log(err)
+      })
 }
 
 
@@ -42,10 +47,82 @@ componentDidMount(){
   render(){
     // let url = '';
     // 'https://image.tmdb.org/t/p/w500/' +
-    let url =  this.state.now_playing.results;
     
-    // url.forEach()
-    console.log(url)
+
+    if(this.state.now_playing){
+      let url =  this.state.now_playing.results;
+      let itemId = 0;
+      let render = '';
+      if(url){
+        // url.forEach(function(element) {
+          
+
+        // let posterimgurl =  'https://image.tmdb.org/t/p/w500/' + element.poster_path;
+        // let movietitle = element.title;
+        // let overview = element.overview;
+        // let releasedate = overview.release_date;
+
+        // itemId++; 
+        // console.log(itemId)
+        // console.log(posterimgurl);
+
+        // });
+
+        return(
+          <Container fluid>
+            {/* <h4 className="mt-5 mb-2">Basic example</h4> */}
+            <Carousel
+              activeItem={1}
+              length={20}
+              showControls={true}
+              showIndicators={false}
+              className="z-depth-1">
+              <CarouselInner>
+
+                {url.map((movie, i) => { 
+                    
+               let itemId = i + 1;
+                // itemId = itemId + 1;
+                                  // console.log(movie);
+                                  // console.log(i); 
+           // Return the element. Also pass key     
+           return (<CarouselItemList movie={movie} itemId={itemId} />) 
+        })}
+
+        {/* { url.forEach(function(element) {
+          
+
+          let posterimgurl =  'https://image.tmdb.org/t/p/w500/' + element.poster_path;
+          let movietitle = element.title;
+          let overview = element.overview;
+          let releasedate = overview.release_date;
+  
+          itemId++; 
+          console.log(itemId)
+          console.log(posterimgurl);
+          return (<CarouselItemList movie={element} itemId={itemId} />) 
+
+          }) } */}
+          
+{/* <div class="carousel-item"><div class="view"><img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg" alt="Third slide"><div class="mask rgba-black-slight"></div></div><div class="carousel-caption"><h3 class="h3-responsive">Slight mask</h3><p>Third text</p></div></div> */}
+              </CarouselInner>
+            </Carousel>
+          </Container>
+        );
+
+
+        
+
+      }
+      // console.log(url)
+
+    }else if(this.state.error){
+      console.log('unable to fetch now!!');
+    }else{
+      console.log('unable to fetch now');
+    }
+    
+    // return {render};
     return(
       <Container fluid>
         {/* <h4 className="mt-5 mb-2">Basic example</h4> */}
@@ -53,12 +130,12 @@ componentDidMount(){
           activeItem={1}
           length={4}
           showControls={true}
-          showIndicators={false}
+          showIndicators={true}
           className="z-depth-1">
           <CarouselInner>
             <CarouselItem itemId="1">
               <View>
-                <img className="d-block w-100" src='' alt="First slide" />
+                <img className="d-block w-100" src='https://mdbootstrap.com/img/Photos/Slides/img%20(99).jpg' alt="First slide" />
                 <Mask overlay="black-light"></Mask>
               </View>
               <CarouselCaption>
