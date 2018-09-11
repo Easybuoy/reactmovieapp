@@ -6,6 +6,7 @@ const CarouselItemList = ({  movie, itemId }) => {
     // console.log(movie);
         let posterimgurl =  'https://image.tmdb.org/t/p/w500/' + movie.poster_path;
 
+        
     return (
       <div className='center ma'>
         <CarouselItem itemId={itemId}>
