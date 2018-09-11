@@ -1,9 +1,51 @@
 import React, { Component } from 'react';
 import  {Carousel, CarouselCaption, CarouselInner, CarouselItem, View, Mask, Container, Button } from 'mdbreact';
+import TMDB_API_KEY from '../../config/keys';
 // import { Link } from 'react-router-dom';
 
 class CarouselPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        now_playing: {},
+    };
+    // this.onClick = this.onClick.bind(this);
+}
+
+componentDidMount(){
+  // console.log(TMDB_API_KEY);
+  fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=8820a34ead565c3598da6ffc356064fc&language=en-US&page=1', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: this.state.email,
+                password: this.state.password
+            }) 
+          
+        }).then(res => res.json()
+        .then(data => {
+          this.setState({now_playing: data})
+          console.log(this.state);
+        })  
+      ).catch(err =>console.log(err))
+}
+
+
+// {
+//   console.log(res)
+
+//   console.log(res.json())
+// }
+
   render(){
+    // let url = '';
+    // 'https://image.tmdb.org/t/p/w500/' +
+    let url =  this.state.now_playing.results;
+    
+    // url.forEach()
+    console.log(url)
     return(
       <Container fluid>
         {/* <h4 className="mt-5 mb-2">Basic example</h4> */}
@@ -16,7 +58,7 @@ class CarouselPage extends Component {
           <CarouselInner>
             <CarouselItem itemId="1">
               <View>
-                <img className="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" />
+                <img className="d-block w-100" src='' alt="First slide" />
                 <Mask overlay="black-light"></Mask>
               </View>
               <CarouselCaption>
