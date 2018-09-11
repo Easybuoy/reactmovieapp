@@ -41,7 +41,10 @@ componentDidMount(){
 
   render(){
     // let url = '';
-    let url = 'https://image.tmdb.org/t/p/w500/' + this.state.now_playing.results; 
+    // 'https://image.tmdb.org/t/p/w500/' +
+    let url =  this.state.now_playing.results;
+    
+    // url.forEach()
     console.log(url)
     return(
       <Container fluid>
@@ -55,7 +58,7 @@ componentDidMount(){
           <CarouselInner>
             <CarouselItem itemId="1">
               <View>
-                <img className="d-block w-100" src={url} alt="First slide" />
+                <img className="d-block w-100" src='' alt="First slide" />
                 <Mask overlay="black-light"></Mask>
               </View>
               <CarouselCaption>
