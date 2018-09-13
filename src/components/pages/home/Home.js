@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from '../../carousel/Carousel';
-// import Card from '../../card/Card';
+import Card from '../../card/Card';
 
 class Home extends Component {
   render() {
@@ -8,7 +8,24 @@ class Home extends Component {
     return (
       <div>
          <Carousel />
-         {/* <Card /> */}
+         <div className="container">
+  <div className="row">
+
+    <div className="col">
+    <Card />
+    </div>
+
+    <div className="col">
+    <Card />
+    </div>
+
+    <div className="col">
+    <Card me="hi"/>
+    </div>
+
+  </div>
+</div>
+        
       </div>
     );
   }

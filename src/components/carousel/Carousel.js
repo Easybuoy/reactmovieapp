@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import  {Carousel, CarouselCaption, CarouselInner, CarouselItem, View, Mask, Container, Button } from 'mdbreact';
+import  {Carousel, CarouselInner, Container } from 'mdbreact';
 import TMDB_API_KEY from '../../config/keys';
 import CarouselItemList from './CarouselItemList';
 import { Triple } from 'react-preloading-component';
+
 // import { Link } from 'react-router-dom';
 
 class CarouselPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        now_playing: {},
-        error: {}
+        now_playing: 0,
+        error: 0
     };
     // this.onClick = this.onClick.bind(this);
 }
@@ -39,18 +40,9 @@ componentDidMount(){
 }
 
 
-// {
-//   console.log(res)
-
-//   console.log(res.json())
-// }
-
   render(){
-    // let url = '';
-    // 'https://image.tmdb.org/t/p/w500/' +
-    
 
-    if(this.state.now_playing){
+    if(this.state.now_playing !== 0){
       let url =  this.state.now_playing.results;
       let itemId = 0;
       let render = '';
@@ -114,14 +106,23 @@ componentDidMount(){
 
       }
 
-    }else if(this.state.error){
-      console.log('unable to fetch now!!');
+    }else if(this.state.error !== 0){
+      console.log('aa');
+    
+return (
+  <div>
+    show error
+  </div>
+);
+
     }else{
+      console.log('bb')
       console.log('unable to fetch now');
     }
-    
+    // console.log(this.state)    
     // return {render};
     return(
+      //preloader
       <Triple />
     );
   }

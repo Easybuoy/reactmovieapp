@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import  {CarouselCaption,  CarouselItem, View, Mask, Button } from 'mdbreact';
 // import { Link } from 'react-router-dom';
 
