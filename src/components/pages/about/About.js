@@ -52,6 +52,7 @@ class About extends Component {
                 <Card imageURL={currencyconverterimg}/>
                 </div>
 
+
                 </div>
 
 
