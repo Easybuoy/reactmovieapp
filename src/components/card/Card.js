@@ -74,7 +74,6 @@ class RecipeReviewCard extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     const { classes } = this.props;
 
     return (
@@ -95,7 +94,7 @@ class RecipeReviewCard extends React.Component {
         />
         <CardMedia
           className={classes.media}
-          image="https://d2vlcm61l7u1fs.cloudfront.net/media%2F507%2F50737089-c43d-457a-ac91-020e4f98db0b%2FphpP1iInj.png"
+          image={this.props.imageURL}
           title="Contemplative Reptile"
         />
         <CardContent>
