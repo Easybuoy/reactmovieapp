@@ -119,8 +119,10 @@ class About extends Component {
             </div>
             <br></br>
 
+            <div className="container">
+            <h1 className="text-center"> PROJECTS</h1>
 
-            <div className="row">
+                <div className="row">
 
                 <div className="col">
                 <Card imageURL={movielistings} />
@@ -154,20 +156,24 @@ class About extends Component {
                 </div>
                 <br></br>
 
-              {/* Thrid card row */}
-              <div className="row">
-              <div className="col">
-              <Card imageURL={schoolinformationsystem} />
-              </div>
+                {/* Thrid card row */}
+                <div className="row">
+                <div className="col">
+                <Card imageURL={schoolinformationsystem} />
+                </div>
 
-              <div className="col">
-              <Card imageURL={technicaldocumentationimg}/>
-              </div>
+                <div className="col">
+                <Card imageURL={technicaldocumentationimg}/>
+                </div>
 
-              <div className="col">
-              <Card imageURL={tributepageimg}/>
-              </div>
-              </div>
+                <div className="col">
+                <Card imageURL={tributepageimg}/>
+                </div>
+                </div>
+
+            </div>
+
+           
 
           </div>
       </div>
