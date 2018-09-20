@@ -6,7 +6,9 @@ import productlandingimg from './product_landing.PNG';
 import technicaldocumentationimg from './technical_documentation.PNG';
 import tributepageimg from './tribute_page.PNG';
 import aboutbimg from './aboutimg.JPG';
-
+import movielistings from './movielistings.PNG';
+import movieinfo from './movieinfo.PNG';
+import schoolinformationsystem from './school_information_system.PNG';
 
 
 import Card from '../../card/Card';
@@ -24,37 +26,51 @@ class About extends Component {
             <div className="row">
 
                 <div className="col">
-                <Card imageURL={facedetectionimg} />
+                <Card imageURL={movielistings} />
+                </div>
+
+                <div className="col">
+                <Card imageURL={facedetectionimg}/>
                 </div>
 
                 <div className="col">
                 <Card imageURL={headlinebimg}/>
-                </div>
-
-                <div className="col">
-                <Card imageURL={currencyconverterimg}/>
                 </div>
 
                 </div>
                 <br></br>
 
+                {/* Second Card Row */}
                 <div className="row">
 
                 <div className="col">
-                <Card imageURL={facedetectionimg} />
+                <Card imageURL={movieinfo} />
                 </div>
 
                 <div className="col">
-                <Card imageURL={headlinebimg}/>
+                <Card imageURL={productlandingimg}/>
                 </div>
 
                 <div className="col">
                 <Card imageURL={currencyconverterimg}/>
                 </div>
-
-
                 </div>
+                <br></br>
 
+              {/* Thrid card row */}
+              <div className="row">
+              <div className="col">
+              <Card imageURL={schoolinformationsystem} />
+              </div>
+
+              <div className="col">
+              <Card imageURL={technicaldocumentationimg}/>
+              </div>
+
+              <div className="col">
+              <Card imageURL={tributepageimg}/>
+              </div>
+              </div>
 
           </div>
       </div>
