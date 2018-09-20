@@ -124,16 +124,26 @@ class About extends Component {
 
                 <div className="row">
 
-                <div className="col">
-                <Card imageURL={movielistings} />
+                <div className="col-lg-4 col-md-4 col-sm-4">
+                
+                <Card imageURL={movielistings} cardTitle="Movie Listings App"
+                cardText = "Movie Listing App"
+                buttonURL="https://reactmovieapptmdb.herokuapp.com" buttonText="View App"
+                />
                 </div>
 
-                <div className="col">
-                <Card imageURL={facedetectionimg}/>
-                </div>
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={facedetectionimg} cardTitle="Face Detection App"
+                cardText="This app lets helps detecting celebrities with image provided" 
+                buttonURL="https://facedetectionapp.herokuapp.com/" buttonText="View App"
+                />
+                </div> 
 
-                <div className="col">
-                <Card imageURL={headlinebimg}/>
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={headlinebimg} cardTitle="Headline News App"
+                cardText="This is a progressive web app that allows you view latest and currrent news accross the world."
+                buttonURL="https://headline-pwa.herokuapp.com" buttonText="View App"
+                />
                 </div>
 
                 </div>
@@ -142,32 +152,51 @@ class About extends Component {
                 {/* Second Card Row */}
                 <div className="row">
 
-                <div className="col">
-                <Card imageURL={movieinfo} />
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={movieinfo} cardTitle="Movie Info App"
+                cardText="This app lets you search movies and gives users details about movies searched."
+                buttonURL="https://movie-info1.herokuapp.com" buttonText="View App"
+                />
                 </div>
 
-                <div className="col">
-                <Card imageURL={productlandingimg}/>
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={schoolinformationsystem} cardTitle="School Information System"
+                cardText="This is a simple School Information System that does handles basic Student Information Records. This application has endpoints that handles creating new student, updating existing students, deleting students and reading students from database."
+                buttonURL="https://protected-inlet-20599.herokuapp.com/" buttonText="View App"
+                />
                 </div>
+                
 
-                <div className="col">
-                <Card imageURL={currencyconverterimg}/>
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={currencyconverterimg} cardTitle="Currency Converter App"
+                cardText="This is a currency converter app which converts from one currency to another using current and real-time exchange rates"
+                buttonURL="https://easybuoy.github.io/currencyconverter/" buttonText="View App"
+                />
                 </div>
                 </div>
                 <br></br>
 
                 {/* Thrid card row */}
                 <div className="row">
-                <div className="col">
-                <Card imageURL={schoolinformationsystem} />
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={productlandingimg} cardTitle="Product Landing Page"
+                cardText="This is a simple Product Landing Page"
+                buttonURL="https://codepen.io/easybuoy-the-flexboxer/full/ejPXoN/" buttonText="View Page"
+                />
                 </div>
 
-                <div className="col">
-                <Card imageURL={technicaldocumentationimg}/>
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={technicaldocumentationimg} cardTitle="Technical Documentation Page"
+                cardText="This is a basic Technical Documentation Page For Laravel."
+                buttonURL="https://codepen.io/easybuoy-the-flexboxer/full/vavzrd/" buttonText="View Page"
+                />
                 </div>
 
-                <div className="col">
-                <Card imageURL={tributepageimg}/>
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={tributepageimg} cardTitle="Tribute Page"
+                cardText="This is a Tribute Page made for Mark Zuckerberg"
+                buttonURL="https://codepen.io/easybuoy-the-flexboxer/full/BPObxq/" buttonText="View Page"
+                />
                 </div>
                 </div>
 
