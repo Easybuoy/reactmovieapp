@@ -7,7 +7,7 @@ class Home extends Component {
       console.log('enter')
     return (
       <div>
-         {/* <Carousel /> */}
+         <Carousel />
           <TrendingMovies />
 
 

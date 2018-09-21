@@ -34,30 +34,38 @@ componentDidMount(){
 }
 
 
+    trimText = (text) => {
+       return text.substring(0, 100) + '...';
+    }
+
   render(){
 
     if(this.state.trending !== 0){
       let url =  this.state.trending.results;
-      let itemId = 0;
-      let render = '';
+      
       if(url){
 
         return(
+
           <Container>
-              <h1>TRENDING NOW</h1>
+              <h1>TRENDING MOVIES</h1>
               <hr></hr>
             <div className="row">   
-            
-                {url.map((movie, i) => { 
+                
+                {
                     
+                    url.map((movie, i) => {
+                    if(movie.overview.length > 100){
+                      movie.overview = this.trimText(movie.overview);
+                    }
            return (
-        //    <Card movie={movie} itemId={itemId} />
-        <div className="col-lg-4 col-md-4 col-sm-4">
-           <Card imageURL={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} cardTitle={movie.original_title}
+            <div className="col-lg-4 col-md-4 col-sm-4">
+                <Card imageURL={`${TMDB.IMG_PATH+movie.backdrop_path}`} cardTitle={movie.original_title}
                 cardText = {movie.overview}
                 buttonURL={movie.id} buttonText="View Movie"
                 />
-                 </div>
+                <br></br> 
+            </div>
            ) 
         })}
         </div>

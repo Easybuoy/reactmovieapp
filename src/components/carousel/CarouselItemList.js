@@ -1,11 +1,12 @@
 import React from 'react';
 import  {CarouselCaption,  CarouselItem, View, Mask, Button } from 'mdbreact';
+import TMDB from '../../config/keys';
 // import { Link } from 'react-router-dom';
 
 const CarouselItemList = ({  movie, itemId }) => {
     // console.log(itemId);
     // console.log(movie);
-        let posterimgurl =  'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path;
+        let posterimgurl =  `${TMDB.IMG_PATH  + movie.backdrop_path}`;
 
         // console.log(itemId.toString())
     return (

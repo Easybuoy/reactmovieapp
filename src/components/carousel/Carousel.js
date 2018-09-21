@@ -43,8 +43,8 @@ componentDidMount(){
 
     if(this.state.now_playing !== 0){
       let url =  this.state.now_playing.results;
-      let itemId = 0;
-      let render = '';
+      // let itemId = 0;
+      // let render = '';
       if(url){
         // url.forEach(function(element) {
           

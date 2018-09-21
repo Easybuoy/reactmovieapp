@@ -128,7 +128,7 @@ class About extends Component {
                 
                 <Card imageURL={movielistings} cardTitle="Movie Listings App"
                 cardText = "Movie Listing App"
-                buttonURL="https://reactmovieapptmdb.herokuapp.com" buttonText="View App"
+                buttonURL="https://reactmovieapptmdb.herokuapp.com" buttonText="View App" isExternalLink="true"
                 />
                 </div>
 
