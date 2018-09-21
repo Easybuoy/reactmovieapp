@@ -3,7 +3,7 @@ import  { Container } from 'mdbreact';
 import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
 import Card from '../../card/Card';
-
+import Error from '../../error/Error';
 // import { Link } from 'react-router-dom';
 
 class PopularSeries extends Component {
@@ -29,7 +29,6 @@ componentDidMount(){
         })  
       ).catch(err =>{
         this.setState({error: err});
-        console.log(err)
       })
 }
 
@@ -78,20 +77,20 @@ componentDidMount(){
       }
 
     }else if(this.state.error !== 0){
-      console.log('aa');
-    
-return (
-  <div>
-    show error
-  </div>
-);
+     
+            return (
+            <div>
+                <Error />
+            </div>
+            );
 
     }else{
-      console.log('bb')
-      console.log('unable to fetch now');
+        return (
+            <div>
+              <Triple />
+            </div>
+            );
     }
-    // console.log(this.state)    
-    // return {render};
     return(
       //preloader
       <Triple />

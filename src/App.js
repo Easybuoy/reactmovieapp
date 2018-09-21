@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/pages/home/Home';
 import Movies from './components/pages/movies/Movies';
+import Movie from './components/pages/movies/Movie';
 import Tvseries from './components/pages/tvseries/Tvseries';
 import About from './components/pages/about/About';
 
@@ -17,6 +18,7 @@ class App extends Component {
       <Navigation/>
       <Route exact path="/" component={Home} />
       <Route exact path="/movies" component={Movies} />
+      <Route  path="/movies/:movie_id" component={Movie} />
       <Route exact path="/tvseries" component={Tvseries} />
       <Route exact path="/about" component={About} />
       <Footer />

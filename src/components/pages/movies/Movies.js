@@ -4,7 +4,7 @@ import Input from '@material-ui/core/Input';
 
 class Movies extends Component {
   render() {
-
+      console.log(this.props.match.params.movie_id);
     return (
       <div>
           <h1> Movies</h1>

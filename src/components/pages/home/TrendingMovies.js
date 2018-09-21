@@ -3,7 +3,7 @@ import  { Container } from 'mdbreact';
 import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
 import Card from '../../card/Card';
-
+import Error from '../../error/Error';
 // import { Link } from 'react-router-dom';
 
 class TrendingMovies extends Component {
@@ -29,7 +29,6 @@ componentDidMount(){
         })  
       ).catch(err =>{
         this.setState({error: err});
-        console.log(err)
       })
 }
 
@@ -62,7 +61,7 @@ componentDidMount(){
             <div className="col-lg-4 col-md-4 col-sm-4">
                 <Card imageURL={`${TMDB.IMG_PATH+movie.backdrop_path}`} cardTitle={movie.original_title}
                 cardText = {movie.overview}
-                buttonURL={movie.id} buttonText="View Movie"
+                buttonURL={`/movies/${movie.id}`} buttonText="View Movie"
                 />
                 <br></br> 
             </div>
@@ -78,17 +77,20 @@ componentDidMount(){
       }
 
     }else if(this.state.error !== 0){
-      console.log('aa');
     
-return (
-  <div>
-    show error
-  </div>
-);
+            return (
+            <div>
+                <Error />
+            </div>
+            );
 
     }else{
-      console.log('bb')
-      console.log('unable to fetch now');
+        return (
+            <div>
+             <Triple />
+
+            </div>
+            );
     }
     // console.log(this.state)    
     // return {render};

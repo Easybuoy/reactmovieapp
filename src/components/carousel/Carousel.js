@@ -22,10 +22,6 @@ componentDidMount(){
             headers: {
                 'Content-Type': 'application/json'
             },
-            // body: JSON.stringify({
-            //     email: this.state.email,
-            //     password: this.state.password
-            // }) 
           
         }).then(res => res.json()
         .then(data => {
@@ -105,21 +101,22 @@ componentDidMount(){
 
       }
 
-    }else if(this.state.error !== 0){
-      console.log('aa');
-    
-return (
-  <div>
-    <Error errorMessage="Reeload Now"/>
-  </div>
-);
+    }else if(this.state.error !== 0){    
+          return (
+            <div>
+              <Error />
+            </div>
+          );
 
     }else{
-      console.log('bb')
-      console.log('unable to fetch now');
+      return (
+        <div>
+          <Triple />
+        </div>
+      );
+
     }
-    // console.log(this.state)    
-    // return {render};
+    
     return(
       //preloader
       <Triple />
