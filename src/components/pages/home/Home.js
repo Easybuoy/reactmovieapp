@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import Carousel from '../../carousel/Carousel';
 import Card from '../../card/Card';
-
+import TrendingMovies from './TrendingMovies';
 class Home extends Component {
   render() {
       console.log('enter')
     return (
       <div>
-         <Carousel />
-         <div className="container">
-  <div className="row">
+         {/* <Carousel /> */}
+          <TrendingMovies />
+
+
+         {/* <div className="container">
+      <div className="row">
 
     <div className="col">
     <Card />
@@ -24,7 +27,7 @@ class Home extends Component {
     </div>
 
   </div>
-</div>
+</div> */}
         
       </div>
     );

@@ -114,7 +114,7 @@ class RecipeReviewCard extends React.Component {
 
           </Typography>
         </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing>
+        {/* <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="Add to favorites">
             <FavoriteIcon />
           </IconButton>
@@ -131,7 +131,7 @@ class RecipeReviewCard extends React.Component {
           >
             <ExpandMoreIcon />
           </IconButton>
-        </CardActions>
+        </CardActions> */}
         {/* <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph variant="body2">

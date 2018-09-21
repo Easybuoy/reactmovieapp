@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import  {Carousel, CarouselInner, Container } from 'mdbreact';
-import TMDB_API_KEY from '../../config/keys';
+import TMDB from '../../config/keys';
 import CarouselItemList from './CarouselItemList';
 import { Triple } from 'react-preloading-component';
 
@@ -17,16 +17,15 @@ class CarouselPage extends Component {
 }
 
 componentDidMount(){
-  // console.log(TMDB_API_KEY);
-  fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=8820a34ead565c3598da6ffc356064fc&language=en-US&page=1', {
-            method: 'post',
+  fetch(`${TMDB.TMDB_PATH}movie/now_playing?api_key=${TMDB.TMDB_API_KEY}&language=en-US&page=1`, {
+            method: 'get',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                email: this.state.email,
-                password: this.state.password
-            }) 
+            // body: JSON.stringify({
+            //     email: this.state.email,
+            //     password: this.state.password
+            // }) 
           
         }).then(res => res.json()
         .then(data => {
