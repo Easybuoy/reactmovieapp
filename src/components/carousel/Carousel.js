@@ -3,7 +3,7 @@ import  {Carousel, CarouselInner, Container } from 'mdbreact';
 import TMDB from '../../config/keys';
 import CarouselItemList from './CarouselItemList';
 import { Triple } from 'react-preloading-component';
-
+import Error from '../error/Error';
 // import { Link } from 'react-router-dom';
 
 class CarouselPage extends Component {
@@ -66,7 +66,7 @@ componentDidMount(){
               activeItem={1}
               length={20}
               showControls={true}
-              showIndicators={true}
+              showIndicators={false}
               className="z-depth-1">
               <CarouselInner>
 
@@ -110,7 +110,7 @@ componentDidMount(){
     
 return (
   <div>
-    show error
+    <Error errorMessage="Reeload Now"/>
   </div>
 );
 

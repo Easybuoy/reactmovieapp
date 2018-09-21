@@ -6,25 +6,25 @@ import Card from '../../card/Card';
 
 // import { Link } from 'react-router-dom';
 
-class TrendingMovies extends Component {
+class PopularSeries extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        trending: 0,
+        series: 0,
         error: 0
     };
-    
+    // this.onClick = this.onClick.bind(this);
 }
 
 componentDidMount(){
-  fetch(`${TMDB.TMDB_PATH}trending/movie/day?api_key=${TMDB.TMDB_API_KEY}`, {
+  fetch(`${TMDB.TMDB_PATH}tv/popular?api_key=${TMDB.TMDB_API_KEY}`, {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json'
             }, 
         }).then(res => res.json()
         .then(data => {
-          this.setState({trending: data});
+          this.setState({series: data});
           console.log(this.state);
         })  
       ).catch(err =>{
@@ -40,15 +40,15 @@ componentDidMount(){
 
   render(){
 
-    if(this.state.trending !== 0){
-      let url =  this.state.trending.results;
+    if(this.state.series !== 0){
+      let url =  this.state.series.results;
       
       if(url){
 
         return(
 
           <Container>
-              <h1>TRENDING MOVIES</h1>
+              <h1>POPULAR SERIES</h1>
               <hr></hr>
             <div className="row">   
                 
@@ -60,9 +60,9 @@ componentDidMount(){
                     }
            return (
             <div className="col-lg-4 col-md-4 col-sm-4">
-                <Card imageURL={`${TMDB.IMG_PATH+movie.backdrop_path}`} cardTitle={movie.original_title}
+                <Card imageURL={`${TMDB.IMG_PATH+movie.backdrop_path}`} cardTitle={movie.original_name}
                 cardText = {movie.overview}
-                buttonURL={movie.id} buttonText="View Movie"
+                buttonURL={movie.id} buttonText="View Series"
                 />
                 <br></br> 
             </div>
@@ -99,4 +99,4 @@ return (
   }
 }
 
-export default TrendingMovies;
+export default PopularSeries;
