@@ -10,8 +10,8 @@ const CarouselItemList = ({  movie, itemId }) => {
     return text.substring(0, 100) + '...';
   }
 
-        let posterimgurl =  `${TMDB.IMG_PATH  + movie.backdrop_path}`;
-       
+        let posterimgurl =  `${TMDB.IMG_PATH  + 'w780/' + movie.backdrop_path}`;
+
         
 
         // console.log(itemId.toString())

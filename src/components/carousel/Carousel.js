@@ -57,7 +57,7 @@ componentDidMount(){
         // });
 
         return(
-          <Container >
+          <Container fluid >
             <Carousel
               activeItem={1}
               length={20}

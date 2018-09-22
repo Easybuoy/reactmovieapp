@@ -59,7 +59,7 @@ componentDidMount(){
                     }
            return (
             <div className="col-lg-4 col-md-4 col-sm-4">
-                <Card imageURL={`${TMDB.IMG_PATH+movie.backdrop_path}`} cardTitle={movie.original_name}
+                <Card imageURL={`${TMDB.IMG_PATH+ 'w500/' + movie.backdrop_path}`} cardTitle={movie.original_name}
                 cardText = {movie.overview}
                 buttonURL={movie.id} buttonText="View Series"
                 />
