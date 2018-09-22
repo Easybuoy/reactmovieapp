@@ -3,7 +3,7 @@ import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
 import Error from '../../error/Error';
 import Button from '@material-ui/core/Button';
-
+import Credits from './Credits';
 
 class Movie extends Component {
     constructor(props) {
@@ -105,6 +105,9 @@ class Movie extends Component {
 
                 </div>
 
+
+                  
+
                 </div>
                   
                   
@@ -130,6 +133,11 @@ class Movie extends Component {
           </div>
          
               <hr></hr>
+
+                
+              <Credits movie_id = {movie.id}/>              
+              
+              
               </div>
           );
   
