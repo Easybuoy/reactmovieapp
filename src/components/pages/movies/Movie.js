@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
 import Error from '../../error/Error';
-import ImageCard from '../../card/ImageCard';
 import Button from '@material-ui/core/Button';
 
 
@@ -95,13 +94,14 @@ class Movie extends Component {
                 <li className="list-group-item"><strong>Genre:</strong> {this.convertArrayToCommaSeperated(movie.genres)}</li>
                 <li className="list-group-item"><strong>Language(s):</strong> {this.convertArrayToCommaSeperated(movie.spoken_languages)}</li>
                 <li className="list-group-item"><strong>Runtime:</strong> {this.convertTime(movie.runtime)}</li>
+                <li className="list-group-item"><strong>Status:</strong> {movie.status}</li>
                 <li className="list-group-item"><strong>Release Date:</strong> {movie.release_date}</li>
 
                 </ul>
                 
-                <div style={{marginTop: '20px'}}>
-                <Button variant="outlined" color="primary" style={{marginRight: '50px    '}}><a target="_blank"  href= {movie.homepage}> View Movie Homepage</a></Button>
-                <Button variant="outlined" color="primary" style={{marginRight: '50px    '}}><a target="_blank"  href= {`https://www.imdb.com/title/${movie.imdb_id}`}> View IMDB</a></Button>
+                <div >
+                <Button variant="outlined" color="primary" style={{marginRight: '20px', marginTop: '20px'}} className="text-center"><a target="_blank"  href= {movie.homepage}> View Movie Homepage</a></Button>
+                <Button variant="outlined" color="primary" style={{marginRight: '20px', marginTop: '20px'}} className="text-center"><a target="_blank"  href= {`https://www.imdb.com/title/${movie.imdb_id}`}> View IMDB</a></Button>
 
                 </div>
 
