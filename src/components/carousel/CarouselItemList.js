@@ -1,11 +1,18 @@
 import React from 'react';
-import  {CarouselCaption,  CarouselItem, View, Mask, Button } from 'mdbreact';
+import  {CarouselCaption,  CarouselItem, View, Mask } from 'mdbreact';
+import TMDB from '../../config/keys';
 // import { Link } from 'react-router-dom';
 
+
+
 const CarouselItemList = ({  movie, itemId }) => {
-    // console.log(itemId);
-    // console.log(movie);
-        let posterimgurl =  'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path;
+  const trimText = (text) => {
+    return text.substring(0, 100) + '...';
+  }
+
+        let posterimgurl =  `${TMDB.IMG_PATH  + movie.backdrop_path}`;
+       
+        
 
         // console.log(itemId.toString())
     return (
@@ -20,7 +27,7 @@ const CarouselItemList = ({  movie, itemId }) => {
                  {/* <Link to= "/chei"><Button color="elegant"> Primary</Button></Link> */}
 
 
-                 <p>{movie.overview}</p>
+                 <p className="h6-responsive">{trimText(movie.overview)}</p>
                </CarouselCaption>
              </CarouselItem>
       </div>

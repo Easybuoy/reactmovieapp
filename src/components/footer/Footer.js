@@ -1,6 +1,6 @@
 import React from 'react';
-import { Col, Container, Row, Footer, Animation, Input } from 'mdbreact';
-import tmdbimg from './tmdb2.png';
+import { Col, Container, Row, Footer, Animation } from 'mdbreact';
+import tmdbimg from './tmdb.png';
 
 class FooterPage extends React.Component {
     render(){ console.log();
@@ -14,27 +14,7 @@ class FooterPage extends React.Component {
                     </Col>
                     <Col sm="4">
                         <h5 className="title text-center">Contact</h5>
-                        <div className="">
-                            
-                            
-                        <form method="POST" action="https://formspree.io/ekunolaeasybuoy@gmail.com" >
-                        <label htmlFor="email" className="white-text">From</label>
-                        <input type="email" id="email" name="_replyto" className="form-control" placeholder="Your Email" required/>
-                        <br/>
-                        <label htmlFor="to" className="white-text">To</label>
-                        <input type="text" id="to" name="to" className="form-control" value="Ezekiel Ekunola" readOnly/>
-                        <br />
-                        <label htmlFor="message" className="white-text">Message</label>
-                        <textarea type="text" id="message" name="message" className="form-control" rows="3" minLength="50" maxLength="500" required></textarea>
-                        <input type="hidden" name="_next" value={window.location.host + '/thanks'} />
-                        <input type="text" name="_gotcha" style={{display:'none'}} />
-                        <div className="text-center mt-4">
                         
-                            <button className="btn btn-outline-white hoverable z-depth-5" style={{borderRadius: '50px'}} type="submit">Send<i className="fa fa-paper-plane-o ml-2"></i></button>
-                        </div>
-                        </form>
-
-                        </div>
                         
                     </Col>
                     <Col sm="4">

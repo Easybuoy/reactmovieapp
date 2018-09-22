@@ -9,5 +9,10 @@
 
 .wh-color{
     color: white !important;
-    display: pointer !important;
+    cursor: default !important;
+}
+
+.h1{
+    font-weight: 900;
+    font-family: 'Pacifico', cursive;
 }

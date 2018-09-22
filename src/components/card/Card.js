@@ -21,21 +21,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
+// import CardActions from '@material-ui/core/CardActions';
+// import Collapse from '@material-ui/core/Collapse';
+// import Avatar from '@material-ui/core/Avatar';
+// import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShareIcon from '@material-ui/icons/Share';
+// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+
 
 const styles = theme => ({
   card: {
@@ -75,22 +78,29 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
+    
+    let button =  <Button className="primary-color"><Link to = {`${this.props.buttonURL}`} style={{'color': 'white'}} > {this.props.buttonText}</Link></Button>;
+    if(this.props.isExternalLink === 'true'){ 
+      button = <Button className="primary-color"><a target="_blank" style={{'color': 'white'}} href= {this.props.buttonURL}> {this.props.buttonText}</a></Button>;
+    }
+
+
 
     return (
       <Card className={classes.card}>
         <CardHeader
-          avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar}>
-              R
-            </Avatar>
-          }
-          action={
-            <IconButton>
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+          // avatar={
+          //   <Avatar aria-label="Recipe" className={classes.avatar}>
+          //     R
+          //   </Avatar>
+          // }
+          // action={
+          //   <IconButton>
+          //     <MoreVertIcon />
+          //   </IconButton>
+          // }
+          title={this.props.cardTitle}
+          // subheader="September 14, 2016"
         />
         <CardMedia
           className={classes.media}
@@ -99,11 +109,20 @@ class RecipeReviewCard extends React.Component {
         />
         <CardContent>
           <Typography component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+            {this.props.cardText}
+            {/* {
+              {this.props.buttonURL{
+
+              }
+            } */}
+            <br></br>
+            <br></br>
+            {button}
+            {/* <Button className="primary-color"><a target="_blank" style={{'color': 'white'}} href= {this.props.buttonURL}> {this.props.buttonText}</a></Button> */}
+
           </Typography>
         </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing>
+        {/* <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="Add to favorites">
             <FavoriteIcon />
           </IconButton>
@@ -120,8 +139,8 @@ class RecipeReviewCard extends React.Component {
           >
             <ExpandMoreIcon />
           </IconButton>
-        </CardActions>
-        <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+        </CardActions> */}
+        {/* <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph variant="body2">
               Method:
@@ -149,8 +168,10 @@ class RecipeReviewCard extends React.Component {
               Set aside off of the heat to let rest for 10 minutes, and then serve.
             </Typography>
           </CardContent>
-        </Collapse>
+        </Collapse> */}
+        
       </Card>
+      
     );
   }
 }

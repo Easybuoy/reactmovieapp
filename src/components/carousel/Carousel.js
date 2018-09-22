@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import  {Carousel, CarouselInner, Container } from 'mdbreact';
-import TMDB_API_KEY from '../../config/keys';
+import TMDB from '../../config/keys';
 import CarouselItemList from './CarouselItemList';
 import { Triple } from 'react-preloading-component';
-
+import Error from '../error/Error';
 // import { Link } from 'react-router-dom';
 
 class CarouselPage extends Component {
@@ -17,16 +17,11 @@ class CarouselPage extends Component {
 }
 
 componentDidMount(){
-  // console.log(TMDB_API_KEY);
-  fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=8820a34ead565c3598da6ffc356064fc&language=en-US&page=1', {
-            method: 'post',
+  fetch(`${TMDB.TMDB_PATH}movie/now_playing?api_key=${TMDB.TMDB_API_KEY}&language=en-US&page=1`, {
+            method: 'get',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                email: this.state.email,
-                password: this.state.password
-            }) 
           
         }).then(res => res.json()
         .then(data => {
@@ -44,8 +39,8 @@ componentDidMount(){
 
     if(this.state.now_playing !== 0){
       let url =  this.state.now_playing.results;
-      let itemId = 0;
-      let render = '';
+      // let itemId = 0;
+      // let render = '';
       if(url){
         // url.forEach(function(element) {
           
@@ -67,7 +62,7 @@ componentDidMount(){
               activeItem={1}
               length={20}
               showControls={true}
-              showIndicators={true}
+              showIndicators={false}
               className="z-depth-1">
               <CarouselInner>
 
@@ -106,21 +101,22 @@ componentDidMount(){
 
       }
 
-    }else if(this.state.error !== 0){
-      console.log('aa');
-    
-return (
-  <div>
-    show error
-  </div>
-);
+    }else if(this.state.error !== 0){    
+          return (
+            <div>
+              <Error />
+            </div>
+          );
 
     }else{
-      console.log('bb')
-      console.log('unable to fetch now');
+      return (
+        <div>
+          <Triple />
+        </div>
+      );
+
     }
-    // console.log(this.state)    
-    // return {render};
+    
     return(
       //preloader
       <Triple />
