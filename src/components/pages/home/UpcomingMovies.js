@@ -6,25 +6,25 @@ import Card from '../../card/Card';
 import Error from '../../error/Error';
 // import { Link } from 'react-router-dom';
 
-class TrendingMovies extends Component {
+class UpcomingMovies extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        trending: 0,
+        upcoming: 0,
         error: 0
     };
     
 }
 
 componentDidMount(){
-  fetch(`${TMDB.TMDB_PATH}trending/movie/day?api_key=${TMDB.TMDB_API_KEY}`, {
+  fetch(`${TMDB.TMDB_PATH}movie/upcoming?api_key=${TMDB.TMDB_API_KEY}`, {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json'
             }, 
         }).then(res => res.json()
         .then(data => {
-          this.setState({trending: data});
+          this.setState({upcoming: data});
           console.log(this.state);
         })  
       ).catch(err =>{
@@ -39,15 +39,15 @@ componentDidMount(){
 
   render(){
 
-    if(this.state.trending !== 0){
-      let url =  this.state.trending.results;
+    if(this.state.upcoming !== 0){
+      let url =  this.state.upcoming.results;
       
       if(url){
 
         return(
 
           <Container>
-              <h1>TRENDING MOVIES</h1>
+              <h1>UPCOMING MOVIES</h1>
               <hr></hr>
             <div className="row">   
                 
@@ -101,4 +101,4 @@ componentDidMount(){
   }
 }
 
-export default TrendingMovies;
+export default UpcomingMovies;
