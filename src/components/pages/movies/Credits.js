@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
 import Error from '../../error/Error';
-import Button from '@material-ui/core/Button';
+import './Credits.css' ;
 
 
 class Credits extends Component {
@@ -69,8 +69,11 @@ class Credits extends Component {
                      return (
                         <div className="col-lg-4 col-md-4 col-sm-4">
 
+                    <div className="box">
                      <img src={`${TMDB.IMG_PATH + 'w185/' +cast.profile_path}`} alt={cast.original_title} />
-                     <h3 className="text-center">{cast.name}</h3>
+                     <p className="text-center"><strong>Name: </strong> {cast.name}</p>
+                     <p className="text-center red-text"><strong>Character: </strong> {cast.character}</p>
+                    </div>
                     <br></br>
                      </div>
 
