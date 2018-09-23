@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Fa } from 'mdbreact';
+import {  Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink } from 'mdbreact';
 import './Navigation.css';
 import navigationimg from './navigationimg.JPG';
 
@@ -45,7 +45,7 @@ render() {
                 <NavLink to="/about">About</NavLink>
               </NavItem>
             </NavbarNav>
-            <NavbarNav right>
+            {/* <NavbarNav right>
               <NavItem>
                 <NavLink target="_blank" to="https://github.com/easybuoy"><Fa icon="github" /></NavLink>
               </NavItem>
@@ -56,7 +56,7 @@ render() {
                 <NavLink to="/www.twitter.com/easybuoy/"><Fa icon="twitter" /></NavLink>
               </NavItem>
               
-            </NavbarNav>
+            </NavbarNav> */}
           </Collapse>
         </Navbar>
         {/* <Container style={container} className="text-center mt-5">
