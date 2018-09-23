@@ -82,6 +82,8 @@ class RecipeReviewCard extends React.Component {
     let button =  <Button className="primary-color"><Link to = {`${this.props.buttonURL}`} style={{'color': 'white'}} > {this.props.buttonText}</Link></Button>;
     if(this.props.isExternalLink === 'true'){ 
       button = <Button className="primary-color"><a target="_blank" style={{'color': 'white'}} href= {this.props.buttonURL}> {this.props.buttonText}</a></Button>;
+    }else if(this.props.ReloadLink){
+      button = <Button className="primary-color"><a style={{'color': 'white'}} href= {this.props.buttonURL}> {this.props.buttonText}</a></Button>;
     }
 
 
