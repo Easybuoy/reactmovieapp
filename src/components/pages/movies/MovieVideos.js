@@ -107,9 +107,9 @@ componentDidMount(){
 
     if(this.state.movievideos !== 0){
       let movievideos =  this.state.movievideos.results;
-      console.log(movievideos)
+
       if(movievideos){
-        // https://www.youtube.com/watch?v=UL29y0ah92w      
+
         return(
 
           <Container>
@@ -117,22 +117,19 @@ componentDidMount(){
               <hr></hr>
             <div className="row">   
                 
-                {/* {
+                {
                     
-                    url.map((movie, i) => {
-                    if(movie.overview.length > 100){
-                      movie.overview = this.trimText(movie.overview);
-                    }
+                    movievideos.map((movie, i) => {
+
            return (
             <div className="col-lg-4 col-md-4 col-sm-4">
-                <Card imageURL={`${TMDB.IMG_PATH + 'w500/' + movie.backdrop_path}`} cardTitle={movie.original_title}
-                cardText = {movie.overview} 
-                buttonURL={`/movies/${movie.id}`} buttonText="View More"
-                />
+                <div className="embed-responsive embed-responsive-16by9">
+    <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${movie.key}`} allowFullScreen title={movie.name} ></iframe>
+                </div>
                 <br></br> 
             </div>
            ) 
-        })} */}
+        })}
         </div>
        
             <hr></hr>

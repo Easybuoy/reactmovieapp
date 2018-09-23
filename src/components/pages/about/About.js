@@ -226,7 +226,8 @@ class About extends Component {
                             <input type="text" id="to" name="to" className="form-control" value="Ezekiel Ekunola" readOnly/>
                             <br />
                             <label htmlFor="message" className="blue-text">Message</label>
-                            <textarea type="text" id="message" name="message" className="form-control" rows="3" minLength="50" maxLength="500" required></textarea>
+                            {/* minLength="50" maxLength="500" */}
+                            <textarea type="text" id="message" name="message" className="form-control" rows="3" required></textarea>
                             <input type="hidden" name="_next" value={window.location.host + '/thanks'} />
                             <input type="text" name="_gotcha" style={{display:'none'}} />
                             <div className="text-center mt-4">
