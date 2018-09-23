@@ -5,6 +5,7 @@ import Error from '../../error/Error';
 import Button from '@material-ui/core/Button';
 import Credits from './Credits';
 import SimilarMovies from './SimilarMovies';
+import MovieVideos from './MovieVideos';
 
 class Movie extends Component {
     constructor(props) {
@@ -138,6 +139,7 @@ class Movie extends Component {
                 
               <Credits movie_id = {movie.id}/>              
               <SimilarMovies movie_id = {movie.id}/>
+              <MovieVideos movie_id = {movie.id}/>
               
               </div>
           );

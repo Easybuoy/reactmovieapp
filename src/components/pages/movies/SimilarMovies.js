@@ -26,7 +26,6 @@ class SimilarMovies extends Component {
               }).then(res => res.json()
               .then(data => {
                 this.setState({similarmovies: data});
-                console.log(this.state);
               })  
             ).catch(err =>{
               this.setState({error: err});

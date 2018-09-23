@@ -25,7 +25,6 @@ class Credits extends Component {
               }).then(res => res.json()
               .then(data => {
                 this.setState({credits: data});
-                console.log(this.state);
               })  
             ).catch(err =>{
               this.setState({error: err});
@@ -65,7 +64,6 @@ class Credits extends Component {
            {
                
                     casts.slice(0, 12).map((cast, i) => {
-                        // console.log(${TMDB.IMG_PATH + 'w45/' +cast.profile_path});
                      return (
                         <div className="col-lg-4 col-md-4 col-sm-4">
 
