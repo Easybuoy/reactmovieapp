@@ -8,6 +8,7 @@ import Movie from './components/pages/movies/Movie';
 import Tvseries from './components/pages/tvseries/Tvseries';
 import TvSerie from './components/pages/tvseries/TvSerie';
 import About from './components/pages/about/About';
+import Thanks from './components/thanks/Thanks';
 
 import './App.css';
 
@@ -23,6 +24,8 @@ class App extends Component {
       <Route  path="/series/:serie_id" component={TvSerie} />
       <Route exact path="/tvseries" component={Tvseries} />
       <Route exact path="/about" component={About} />
+      <Route exact path="/thanks" component={Thanks} />
+
       <Footer />
         
       </div>
