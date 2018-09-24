@@ -6,6 +6,8 @@ import TMDB from '../../../config/keys';
 import Error from '../../error/Error';
 import Card from '../../card/Card';
 import PopularSeries from '../home/PopularSeries';
+import TopRatedSeries from '../home/TopRatedSeries';
+import AiringTodaySeries from '../home/AiringTodaySeries';
 
 class Tvseries extends Component {
   constructor(props) {
@@ -102,6 +104,8 @@ trimText = (text) => {
           {/* <h1> Movies</h1> */}
           <div className="container">
           <SearchBox searchChange = {this.onSearchChange}/>
+          <TopRatedSeries />
+          <AiringTodaySeries />
           <PopularSeries />
           </div>
       </div>
