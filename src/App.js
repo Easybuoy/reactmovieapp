@@ -6,6 +6,7 @@ import Home from './components/pages/home/Home';
 import Movies from './components/pages/movies/Movies';
 import Movie from './components/pages/movies/Movie';
 import Tvseries from './components/pages/tvseries/Tvseries';
+import TvSerie from './components/pages/tvseries/TvSerie';
 import About from './components/pages/about/About';
 
 import './App.css';
@@ -19,6 +20,7 @@ class App extends Component {
       <Route exact path="/" component={Home} />
       <Route exact path="/movies" component={Movies} />
       <Route  path="/movies/:movie_id" component={Movie} />
+      <Route  path="/series/:serie_id" component={TvSerie} />
       <Route exact path="/tvseries" component={Tvseries} />
       <Route exact path="/about" component={About} />
       <Footer />

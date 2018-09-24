@@ -2,30 +2,29 @@ import React, { Component } from 'react';
 import  { Container } from 'mdbreact';
 import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
-import Card from '../../card/Card';
 import Error from '../../error/Error';
 // import { Link } from 'react-router-dom';
 
-class PopularSeries extends Component {
+class MovieVideos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        series: 0,
+        movievideos: 0,
+        movie_id: this.props.movie_id,
         error: 0
     };
-    // this.onClick = this.onClick.bind(this);
+    
 }
 
 componentDidMount(){
-  fetch(`${TMDB.TMDB_PATH}tv/popular?api_key=${TMDB.TMDB_API_KEY}`, {
+  fetch(`${TMDB.TMDB_PATH}movie/${this.state.movie_id}/videos?api_key=${TMDB.TMDB_API_KEY}`, {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json'
             }, 
         }).then(res => res.json()
         .then(data => {
-          this.setState({series: data});
-          console.log(this.state);
+          this.setState({movievideos: data});
         })  
       ).catch(err =>{
         this.setState({error: err});
@@ -39,30 +38,27 @@ componentDidMount(){
 
   render(){
 
-    if(this.state.series !== 0){
-      let url =  this.state.series.results;
-      
-      if(url){
+    if(this.state.movievideos !== 0){
+      let movievideos =  this.state.movievideos.results;
+
+      if(movievideos){
 
         return(
 
           <Container>
-              <h1>POPULAR SERIES</h1>
+              <h1>MOVIE VIDEOS</h1>
               <hr></hr>
             <div className="row">   
                 
                 {
                     
-                    url.map((movie, i) => {
-                    if(movie.overview.length > 100){
-                      movie.overview = this.trimText(movie.overview);
-                    }
+                    movievideos.map((movie, i) => {
+
            return (
             <div className="col-lg-4 col-md-4 col-sm-4">
-                <Card imageURL={`${TMDB.IMG_PATH+ 'w500/' + movie.backdrop_path}`} cardTitle={movie.original_name}
-                cardText = {movie.overview}
-                buttonURL={`/series/${movie.id}`} buttonText="View More"
-                />
+                <div className="embed-responsive embed-responsive-16by9">
+    <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${movie.key}`} allowFullScreen title={movie.name} ></iframe>
+                </div>
                 <br></br> 
             </div>
            ) 
@@ -77,7 +73,7 @@ componentDidMount(){
       }
 
     }else if(this.state.error !== 0){
-     
+    
             return (
             <div>
                 <Error />
@@ -87,10 +83,13 @@ componentDidMount(){
     }else{
         return (
             <div>
-              <Triple />
+             <Triple />
+
             </div>
             );
     }
+    // console.log(this.state)    
+    // return {render};
     return(
       //preloader
       <Triple />
@@ -98,4 +97,4 @@ componentDidMount(){
   }
 }
 
-export default PopularSeries;
+export default MovieVideos;

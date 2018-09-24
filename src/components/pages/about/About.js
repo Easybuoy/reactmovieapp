@@ -130,6 +130,7 @@ class About extends Component {
                 cardText = "Movie Listing App"
                 buttonURL="https://reactmovieapptmdb.herokuapp.com" buttonText="View App" isExternalLink="true"
                 />
+                <br></br>
                 </div>
 
                 <div className="col-lg-4 col-md-4 col-sm-12">
@@ -137,6 +138,7 @@ class About extends Component {
                 cardText="This app lets helps detecting celebrities with image provided" 
                 buttonURL="https://facedetectionapp.herokuapp.com/" buttonText="View App" isExternalLink="true"
                 />
+                <br></br>
                 </div> 
 
                 <div className="col-lg-4 col-md-4 col-sm-12">
@@ -144,6 +146,7 @@ class About extends Component {
                 cardText="This is a progressive web app that allows you view latest and currrent news accross the world."
                 buttonURL="https://headline-pwa.herokuapp.com" buttonText="View App" isExternalLink="true"
                 />
+                <br></br>
                 </div>
 
                 </div>
@@ -157,6 +160,7 @@ class About extends Component {
                 cardText="This app lets you search movies and gives users details about movies searched."
                 buttonURL="https://movie-info1.herokuapp.com" buttonText="View App" isExternalLink="true"
                 />
+                <br></br>
                 </div>
 
                 <div className="col-lg-4 col-md-4 col-sm-12">
@@ -164,6 +168,7 @@ class About extends Component {
                 cardText="This is a simple School Information System that does handles basic Student Information Records. This application has endpoints that handles creating new student, updating existing students, deleting students and reading students from database."
                 buttonURL="https://protected-inlet-20599.herokuapp.com/" buttonText="View App" isExternalLink="true"
                 />
+                <br></br>
                 </div>
                 
 
@@ -172,9 +177,10 @@ class About extends Component {
                 cardText="This is a currency converter app which converts from one currency to another using current and real-time exchange rates"
                 buttonURL="https://easybuoy.github.io/currencyconverter/" buttonText="View App" isExternalLink="true"
                 />
-                </div>
-                </div>
                 <br></br>
+                </div>
+                </div>
+                {/* <br></br> */}
 
                 {/* Thrid card row */}
                 <div className="row">
@@ -183,6 +189,7 @@ class About extends Component {
                 cardText="This is a simple Product Landing Page"
                 buttonURL="https://codepen.io/easybuoy-the-flexboxer/full/ejPXoN/" buttonText="View Page" isExternalLink="true"
                 />
+                <br></br>
                 </div>
 
                 <div className="col-lg-4 col-md-4 col-sm-12">
@@ -190,6 +197,7 @@ class About extends Component {
                 cardText="This is a basic Technical Documentation Page For Laravel."
                 buttonURL="https://codepen.io/easybuoy-the-flexboxer/full/vavzrd/" buttonText="View Page" isExternalLink="true"
                 />
+                <br></br>
                 </div>
 
                 <div className="col-lg-4 col-md-4 col-sm-12">
@@ -197,6 +205,7 @@ class About extends Component {
                 cardText="This is a Tribute Page made for Mark Zuckerberg"
                 buttonURL="https://codepen.io/easybuoy-the-flexboxer/full/BPObxq/" buttonText="View Page" isExternalLink="true"
                 />
+                <br></br>
                 </div>
                 </div>
 
@@ -217,7 +226,8 @@ class About extends Component {
                             <input type="text" id="to" name="to" className="form-control" value="Ezekiel Ekunola" readOnly/>
                             <br />
                             <label htmlFor="message" className="blue-text">Message</label>
-                            <textarea type="text" id="message" name="message" className="form-control" rows="3" minLength="50" maxLength="500" required></textarea>
+                            {/* minLength="50" maxLength="500" */}
+                            <textarea type="text" id="message" name="message" className="form-control" rows="3" required></textarea>
                             <input type="hidden" name="_next" value={window.location.host + '/thanks'} />
                             <input type="text" name="_gotcha" style={{display:'none'}} />
                             <div className="text-center mt-4">
