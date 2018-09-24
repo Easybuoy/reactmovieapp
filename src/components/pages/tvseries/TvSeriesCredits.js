@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
 import Error from '../../error/Error';
-import './Credits.css' ;
+import './TvSeriesCredits.css' ;
 
 
-class Credits extends Component {
+class TvseriesCredits extends Component {
     constructor(props) {
         super(props);
         this.state = {
             credits: 0,
-            movie_id: this.props.movie_id,
+            serie_id: this.props.serie_id,
             error: 0
         };
     }
 
 
     componentDidMount(){ 
-        fetch(`${TMDB.TMDB_PATH}movie/${this.state.movie_id}/credits?api_key=${TMDB.TMDB_API_KEY}`, {
+        fetch(`${TMDB.TMDB_PATH}tv/${this.state.serie_id}/credits?api_key=${TMDB.TMDB_API_KEY}`, {
                   method: 'get',
                   headers: {    
                       'Content-Type': 'application/json'
@@ -114,4 +114,4 @@ class Credits extends Component {
   }
 }
 
-export default Credits;
+export default TvseriesCredits;
