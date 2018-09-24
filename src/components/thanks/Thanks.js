@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Thanks.css';
 
 class Thanks extends Component {
 
@@ -7,7 +6,7 @@ class Thanks extends Component {
 
  
     return(
-      <div className="container">
+      <div className="container con">
       
       <div style={{marginTop: '10%', marginBottom: '10%'}}>
       <h1>Thanks For Reaching Out</h1>
