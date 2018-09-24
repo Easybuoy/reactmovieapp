@@ -4,8 +4,8 @@ import { Triple } from 'react-preloading-component';
 import Error from '../../error/Error';
 import Button from '@material-ui/core/Button';
 import TvseriesCredits from './TvSeriesCredits';
-// import SimilarMovies from './SimilarMovies';
-// import MovieVideos from './MovieVideos';
+import SimilarTvSeries from './SimilarTvSeries';
+import SeriesVideos from './SeriesVideos';
 
 class TvSerie extends Component {
     constructor(props) {
@@ -141,8 +141,8 @@ class TvSerie extends Component {
 
                 
               <TvseriesCredits serie_id = {serie.id}/>              
-              {/* <SimilarMovies movie_id = {movie.id}/>
-              <MovieVideos movie_id = {movie.id}/> */}
+              <SimilarTvSeries serie_id = {serie.id}/>
+              <SeriesVideos serie_id = {serie.id}/>
               
               </div>
           );
