@@ -14,7 +14,7 @@ class FooterPage extends React.Component {
                         <a style={{'color': 'white'}} target="_blank" href= "https://www.freecodecamp.org/easybuoy"><Fa icon="free-code-camp" size="2x" className="fav" /></a>
                         <a style={{'color': 'white'}} target="_blank" href= "https://codepen.io/easybuoy-the-flexboxer/"><Fa icon="codepen" size="2x" className="fav" /></a>
                         <a style={{'color': 'white'}} target="_blank" href= "https://www.linkedin.com/in/easybuoy/"><Fa icon="linkedin" size="2x" className="fav" /></a>
-                        <a style={{'color': 'white'}} target="_blank" href= "https://github.com/Easybuoy"><Fa icon="stack-overflow" size="2x" className="fav" /></a>
+                        <a style={{'color': 'white'}} target="_blank" href= "https://stackoverflow.com/users/story/8326940"><Fa icon="stack-overflow" size="2x" className="fav" /></a>
                         <a style={{'color': 'white'}} target="_blank" href= "http://twitter.com/easybuoy/"><Fa icon="twitter" size="2x" className="fav" /></a>
 
 
