@@ -34,7 +34,7 @@ class TvseriesCredits extends Component {
       convertArrayToCommaSeperated(array){
         let response = '';
         array.map((singleitem, i) => {
-            response += singleitem.name + ',' + ' ';
+           return response += singleitem.name + ', ';
         });
         
         return response.slice(0, -2);
@@ -44,7 +44,7 @@ class TvseriesCredits extends Component {
         var minutes = time % 60;
         var hours = (time - minutes) / 60;
         
-        return hours + "h" + ' ' + minutes + 'm';
+        return hours + "h " + minutes + 'm';
         }
 
   render() {

@@ -40,7 +40,7 @@ class SimilarTvSeries extends Component {
         var minutes = time % 60;
         var hours = (time - minutes) / 60;
         
-        return hours + "h" + ' ' + minutes + 'm';
+        return hours + "h " + minutes + 'm';
         }
 
   render() {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Input from '@material-ui/core/Input';
 import SearchBox from './SearchBox';
 import TMDB from '../../../config/keys';
 // import { Triple } from 'react-preloading-component';
