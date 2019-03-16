@@ -3,7 +3,6 @@ import  { Container } from 'mdbreact';
 import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
 import Card from '../../card/Card';
-import Error from '../../error/Error';
 // import { Link } from 'react-router-dom';
 
 class TopRatedSeries extends Component {

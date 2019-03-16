@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navigation from './components/navigation/Navigation';
 import Footer from './components/footer/Footer';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
+
 import Home from './components/pages/home/Home';
 import Movies from './components/pages/movies/Movies';
 import Movie from './components/pages/movies/Movie';

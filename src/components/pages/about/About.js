@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import facedetectionimg from './facedetection.PNG';
-import currencyconverterimg from './currencyconverter.PNG';
-import headlinebimg from './headline.PNG';
-import productlandingimg from './product_landing.PNG';
-import technicaldocumentationimg from './technical_documentation.PNG';
-import tributepageimg from './tribute_page.PNG';
-import aboutbimg from './aboutimg.JPG';
-import movielistings from './movielistings.PNG';
-import movieinfo from './movieinfo.PNG';
-import schoolinformationsystem from './school_information_system.PNG';
+import facedetectionimg from '../../../assets/images/facedetection.PNG';
+import currencyconverterimg from '../../../assets/images/currencyconverter.PNG';
+import headlinebimg from '../../../assets/images/headline.PNG';
+import productlandingimg from '../../../assets/images/product_landing.PNG';
+import technicaldocumentationimg from '../../../assets/images/technical_documentation.PNG';
+import tributepageimg from '../../../assets/images/tribute_page.PNG';
+import aboutbimg from '../../../assets/images/aboutimg.JPG';
+import movielistings from '../../../assets/images/movielistings.PNG';
+import storemanager from '../../../assets/images/storemanager.png';
+import movieinfo from '../../../assets/images/movieinfo.PNG';
+import schoolinformationsystem from '../../../assets/images/school_information_system.PNG';
 import Button from '@material-ui/core/Button';
 // import NavigationIcon from '@material-ui/icons/Navigation';
 // import Icon from '@material-ui/core/Icon';
@@ -124,8 +125,15 @@ class About extends Component {
 
                 <div className="row">
 
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                
+                <div className="col-lg-4 col-md-4 col-sm-12">
+                <Card imageURL={storemanager} cardTitle="Store Manager App"
+                cardText = "A web application that helps store owners manage sales and product inventory records."
+                buttonURL="https://storemanagerreact.herokuapp.com/" buttonText="View App" isExternalLink="true"
+                />
+                <br></br>
+                </div>
+
+                <div className="col-lg-4 col-md-4 col-sm-12">
                 <Card imageURL={movielistings} cardTitle="Movie Listings App"
                 cardText = "Movie Listing App"
                 buttonURL="https://reactmovieapptmdb.herokuapp.com" buttonText="View App" isExternalLink="true"
@@ -141,6 +149,12 @@ class About extends Component {
                 <br></br>
                 </div> 
 
+                </div>
+                <br></br>
+
+                {/* Second Card Row */}
+                <div className="row">
+
                 <div className="col-lg-4 col-md-4 col-sm-12">
                 <Card imageURL={headlinebimg} cardTitle="Headline News App"
                 cardText="This is a progressive web app that allows you view latest and currrent news accross the world."
@@ -148,12 +162,6 @@ class About extends Component {
                 />
                 <br></br>
                 </div>
-
-                </div>
-                <br></br>
-
-                {/* Second Card Row */}
-                <div className="row">
 
                 <div className="col-lg-4 col-md-4 col-sm-12">
                 <Card imageURL={movieinfo} cardTitle="Movie Info App"
@@ -170,7 +178,12 @@ class About extends Component {
                 />
                 <br></br>
                 </div>
-                
+              
+                </div>
+                {/* <br></br> */}
+
+                {/* Thrid card row */}
+                <div className="row">
 
                 <div className="col-lg-4 col-md-4 col-sm-12">
                 <Card imageURL={currencyconverterimg} cardTitle="Currency Converter App"
@@ -179,11 +192,7 @@ class About extends Component {
                 />
                 <br></br>
                 </div>
-                </div>
-                {/* <br></br> */}
 
-                {/* Thrid card row */}
-                <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-12">
                 <Card imageURL={productlandingimg} cardTitle="Product Landing Page"
                 cardText="This is a simple Product Landing Page"
@@ -200,6 +209,11 @@ class About extends Component {
                 <br></br>
                 </div>
 
+                
+                </div>
+
+              {/* Fourth card row */}
+                <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-12">
                 <Card imageURL={tributepageimg} cardTitle="Tribute Page"
                 cardText="This is a Tribute Page made for Mark Zuckerberg"
@@ -208,7 +222,6 @@ class About extends Component {
                 <br></br>
                 </div>
                 </div>
-
             </div>
 
           <hr></hr>
