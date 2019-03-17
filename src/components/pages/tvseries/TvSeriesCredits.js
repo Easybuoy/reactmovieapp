@@ -32,22 +32,6 @@ class TvseriesCredits extends Component {
             })
       }
 
-      convertArrayToCommaSeperated(array){
-        let response = '';
-        array.map((singleitem, i) => {
-           return response += `${singleitem.name  }, `;
-        });
-        
-        return response.slice(0, -2);
-      }
-
-       convertTime(time) {
-        const minutes = time % 60;
-        const hours = (time - minutes) / 60;
-        
-        return `${hours  }h ${  minutes  }m`;
-        }
-
   render() {
     if(this.state.credits !== 0){
         const {credits} = this.state;

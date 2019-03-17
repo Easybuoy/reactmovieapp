@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
+import TMDB from '../../../config/keys';
 import Error from '../../error/Error';
 import Card from '../../card/Card';
+import { trimText } from '../../../utils';
 
 
 
@@ -32,41 +33,34 @@ class SimilarTvSeries extends Component {
             })
       }
 
-      trimText = (text) => {
-        return text.substring(0, 50) + '...';
-     }
-
-       convertTime(time) {
-        var minutes = time % 60;
-        var hours = (time - minutes) / 60;
-        
-        return hours + "h " + minutes + 'm';
-        }
-
   render() {
     if(this.state.similartvseries !== 0){
-        let similartvseries =  this.state.similartvseries.results;
+        const similartvseries =  this.state.similartvseries.results;
         // let casts = credits.cast;
         if(similartvseries){
 
             return(
-                <div className="container">    
+              <div className="container">    
 
                 <h1 className="text-center">SIMILAR SERIES</h1>
-              <hr></hr>
+                <hr />
             
-            <div className="row">                
-           {
+                <div className="row">                
+                  {
                
                     similartvseries.slice(0, 8).map((similartvserie, i) => {
                      return (
-                        <div className="col-lg-3 col-md-3 col-sm-3">
-                        <Card imageURL={`${TMDB.IMG_PATH + 'w500/' + similartvserie.backdrop_path}`} cardTitle={similartvserie.original_name}
-                        cardText = {this.trimText(similartvserie.overview)} 
-                        buttonURL={`/series/${similartvserie.id}`} buttonText="View More" ReloadLink="true"
-                        />
-                        <br></br> 
-                    </div>
+                       <div className="col-lg-3 col-md-3 col-sm-3">
+                         <Card
+                           imageURL={`${`${TMDB.IMG_PATH  }w500/${  similartvserie.backdrop_path}`}`}
+                           cardTitle={similartvserie.original_name}
+                           cardText={trimText(similartvserie.overview)} 
+                           buttonURL={`/series/${similartvserie.id}`}
+                           buttonText="View More"
+                           ReloadLink="true"
+                         />
+                         <br /> 
+                       </div>
 
                      ); 
 
@@ -75,8 +69,8 @@ class SimilarTvSeries extends Component {
             }   
 
 
+                </div>
               </div>
-             </div>
           );
   
   
@@ -85,23 +79,23 @@ class SimilarTvSeries extends Component {
       }else if(this.state.error !== 0){
        
               return (
-              <div>
+                <div>
                   <Error />
-              </div>
+                </div>
               );
   
       }else{
           return (
-              <div>
-                <Triple />
-              </div>
+            <div>
+              <Triple />
+            </div>
               )
     }
 
 
     return (
       <div>
-          <Triple />
+        <Triple />
       </div>
     );
   }

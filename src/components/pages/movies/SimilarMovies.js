@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
+import TMDB from '../../../config/keys';
 import Error from '../../error/Error';
 import Card from '../../card/Card';
-// import './SimilarMovies.css' ;
+import { trimText } from '../../../utils';
 
 
 class SimilarMovies extends Component {
@@ -32,41 +32,34 @@ class SimilarMovies extends Component {
             })
       }
 
-      trimText = (text) => {
-        return text.substring(0, 50) + '...';
-     }
-
-       convertTime(time) {
-        var minutes = time % 60;
-        var hours = (time - minutes) / 60;
-        
-        return hours + "h " + minutes + 'm';
-        }
-
   render() {
     if(this.state.similarmovies !== 0){
-        let similarmovies =  this.state.similarmovies.results;
+        const similarmovies =  this.state.similarmovies.results;
         // let casts = credits.cast;
         if(similarmovies){
 
             return(
-                <div className="container">    
+              <div className="container">    
 
                 <h1 className="text-center">SIMILAR MOVIES</h1>
-              <hr></hr>
+                <hr />
             
-            <div className="row">                
-           {
+                <div className="row">                
+                  {
                
                     similarmovies.slice(0, 8).map((similarmovie, i) => {
                      return (
-                        <div className="col-lg-3 col-md-3 col-sm-3">
-                        <Card imageURL={`${TMDB.IMG_PATH + 'w500/' + similarmovie.backdrop_path}`} cardTitle={similarmovie.original_title}
-                        cardText = {this.trimText(similarmovie.overview)} 
-                        buttonURL={`/movies/${similarmovie.id}`} buttonText="View More" ReloadLink="true"
-                        />
-                        <br></br> 
-                    </div>
+                       <div className="col-lg-3 col-md-3 col-sm-3">
+                         <Card
+                           imageURL={`${`${TMDB.IMG_PATH  }w500/${  similarmovie.backdrop_path}`}`}
+                           cardTitle={similarmovie.original_title}
+                           cardText={trimText(similarmovie.overview)} 
+                           buttonURL={`/movies/${similarmovie.id}`}
+                           buttonText="View More"
+                           ReloadLink="true"
+                         />
+                         <br /> 
+                       </div>
 
                      ); 
 
@@ -75,8 +68,8 @@ class SimilarMovies extends Component {
             }   
 
 
+                </div>
               </div>
-             </div>
           );
   
   
@@ -85,23 +78,23 @@ class SimilarMovies extends Component {
       }else if(this.state.error !== 0){
        
               return (
-              <div>
+                <div>
                   <Error />
-              </div>
+                </div>
               );
   
       }else{
           return (
-              <div>
-                <Triple />
-              </div>
+            <div>
+              <Triple />
+            </div>
               )
     }
 
 
     return (
       <div>
-          <Triple />
+        <Triple />
       </div>
     );
   }

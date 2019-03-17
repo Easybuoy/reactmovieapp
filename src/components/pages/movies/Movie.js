@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
-import Error from '../../error/Error';
 import Button from '@material-ui/core/Button';
+
+import TMDB from '../../../config/keys';
+import Error from '../../error/Error';
 import Credits from './Credits';
 import SimilarMovies from './SimilarMovies';
 import MovieVideos from './MovieVideos';
+import { convertTime, convertArrayToCommaSeperated } from '../../../utils';
 
 class Movie extends Component {
     constructor(props) {
@@ -34,25 +36,10 @@ class Movie extends Component {
             })
       }
 
-      convertArrayToCommaSeperated(array){
-        let response = '';
-        array.map((singleitem, i) => {
-           return response += singleitem.name + ', ';
-        });
-        
-        return response.slice(0, -2);
-      }
-
-       convertTime(time) {
-        var minutes = time % 60;
-        var hours = (time - minutes) / 60;
-        
-        return hours + "h " + minutes + 'm';
-        }
 
   render() {
     if(this.state.movie !== 0){
-        let movie =  this.state.movie;
+        const {movie} = this.state;
         
         if(movie){
             // let prod_companies = movie.production_companies;
@@ -70,47 +57,86 @@ class Movie extends Component {
 
             return(
   
-            <div className="container">
-              <div className="row">   
-              <div className="col-lg-4 col-md-4 col-sm-12">
-                  {/* <ImageCard imageURL={`${TMDB.IMG_PATH+movie.backdrop_path}`} cardTitle={movie.original_name}
+              <div className="container">
+                <div className="row">   
+                  <div className="col-lg-4 col-md-4 col-sm-12">
+                    {/* <ImageCard imageURL={`${TMDB.IMG_PATH+movie.backdrop_path}`} cardTitle={movie.original_name}
                   cardText = {movie.overview}
                   buttonURL={movie.id} buttonText="View Series"
                   /> */}
-                  {/* <div className="img-responsive"> */}
-                    <img src={`${TMDB.IMG_PATH + 'w342/' +movie.poster_path}`} alt={movie.original_title} />
+                    {/* <div className="img-responsive"> */}
+                    <img src={`${`${TMDB.IMG_PATH  }w342/${ movie.poster_path}`}`} alt={movie.original_title} />
                     {/* </div> */}
-                  <br></br> 
-              </div> 
+                    <br /> 
+                  </div> 
 
-                <div className="col-lg-8 col-md-8 col-sm-12">
-                {/* <img src={`${TMDB.IMG_PATH + 'w780/' +movie.backdrop_path}`} alt={movie.original_title} /> */}
+                  <div className="col-lg-8 col-md-8 col-sm-12">
+                    {/* <img src={`${TMDB.IMG_PATH + 'w780/' +movie.backdrop_path}`} alt={movie.original_title} /> */}
                   
-                <h1 className="text-center"> {movie.original_title}</h1>
+                    <h1 className="text-center"> 
+                      {' '}
+                      {movie.original_title}
+                    </h1>
                   
-                <ul className="list-group">
-                <li className="list-group-item"><strong>Overview:</strong> {movie.overview}</li>
-                <li className="list-group-item"><strong>Tag Line:</strong> {movie.tagline}</li>
-                <li className="list-group-item"><strong>Production Companies:</strong> {this.convertArrayToCommaSeperated(movie.production_companies)}</li>
-                <li className="list-group-item"><strong>Production Countries:</strong> {this.convertArrayToCommaSeperated(movie.production_countries)}</li>
-                <li className="list-group-item"><strong>Genre:</strong> {this.convertArrayToCommaSeperated(movie.genres)}</li>
-                <li className="list-group-item"><strong>Language(s):</strong> {this.convertArrayToCommaSeperated(movie.spoken_languages)}</li>
-                <li className="list-group-item"><strong>Runtime:</strong> {this.convertTime(movie.runtime)}</li>
-                <li className="list-group-item"><strong>Status:</strong> {movie.status}</li>
-                <li className="list-group-item"><strong>Release Date:</strong> {movie.release_date}</li>
+                    <ul className="list-group">
+                      <li className="list-group-item">
+                        <strong>Overview:</strong> 
+                        {' '}
+                        {movie.overview}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Tag Line:</strong> 
+                        {' '}
+                        {movie.tagline}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Production Companies:</strong> 
+                        {' '}
+                        {convertArrayToCommaSeperated(movie.production_companies)}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Production Countries:</strong> 
+                        {' '}
+                        {convertArrayToCommaSeperated(movie.production_countries)}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Genre:</strong> 
+                        {' '}
+                        {convertArrayToCommaSeperated(movie.genres)}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Language(s):</strong> 
+                        {' '}
+                        {convertArrayToCommaSeperated(movie.spoken_languages)}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Runtime:</strong> 
+                        {' '}
+                        {convertTime(movie.runtime)}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Status:</strong> 
+                        {' '}
+                        {movie.status}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Release Date:</strong> 
+                        {' '}
+                        {movie.release_date}
+                      </li>
 
-                </ul>
+                    </ul>
                 
-                <div >
-                <Button variant="outlined" color="primary" style={{marginRight: '20px', marginTop: '20px'}} className="text-center"><a target="_blank"  href= {movie.homepage}> View Movie Homepage</a></Button>
-                <Button variant="outlined" color="primary" style={{marginRight: '20px', marginTop: '20px'}} className="text-center"><a target="_blank"  href= {`https://www.imdb.com/title/${movie.imdb_id}`}> View IMDB</a></Button>
+                    <div>
+                      <Button variant="outlined" color="primary" style={{marginRight: '20px', marginTop: '20px'}} className="text-center"><a target="_blank" href={movie.homepage}> View Movie Homepage</a></Button>
+                      <Button variant="outlined" color="primary" style={{marginRight: '20px', marginTop: '20px'}} className="text-center"><a target="_blank" href={`https://www.imdb.com/title/${movie.imdb_id}`}> View IMDB</a></Button>
 
-                </div>
+                    </div>
 
 
                   
 
-                </div>
+                  </div>
                   
                   
                   
@@ -132,14 +158,14 @@ class Movie extends Component {
              ) 
           })
           } */}
-          </div>
+                </div>
          
-              <hr></hr>
+                <hr />
 
                 
-              <Credits movie_id = {movie.id}/>              
-              <SimilarMovies movie_id = {movie.id}/>
-              <MovieVideos movie_id = {movie.id}/>
+                <Credits movie_id={movie.id} />              
+                <SimilarMovies movie_id={movie.id} />
+                <MovieVideos movie_id={movie.id} />
               
               </div>
           );
@@ -157,23 +183,23 @@ class Movie extends Component {
       }else if(this.state.error !== 0){
        
               return (
-              <div>
+                <div>
                   <Error />
-              </div>
+                </div>
               );
   
       }else{
           return (
-              <div>
-                <Triple />
-              </div>
+            <div>
+              <Triple />
+            </div>
               )
     }
 
 
     return (
       <div>
-          <Triple />
+        <Triple />
       </div>
     );
   }

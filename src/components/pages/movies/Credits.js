@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-indent */
 import React, { Component } from 'react';
-import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
+import TMDB from '../../../config/keys';
 import Error from '../../error/Error';
+
 import './Credits.css' ;
 
 
@@ -31,49 +33,41 @@ class Credits extends Component {
             })
       }
 
-      convertArrayToCommaSeperated(array){
-        let response = '';
-        array.map((singleitem, i) => {
-           return response += singleitem.name + ', ';
-        });
-        
-        return response.slice(0, -2);
-      }
-
-       convertTime(time) {
-        var minutes = time % 60;
-        var hours = (time - minutes) / 60;
-        
-        return hours + "h " + minutes + 'm';
-        }
-
   render() {
     if(this.state.credits !== 0){
-        let credits =  this.state.credits;
-        let casts = credits.cast;
+        const {credits} = this.state;
+        const casts = credits.cast;
 
         if(credits){
 
             return(
-                <div className="container">    
+              <div className="container">    
 
-                <h1 className="text-center">CASTS</h1>
-              <hr></hr>
+                  <h1 className="text-center">CASTS</h1>
+                  <hr />
             
-            <div className="row">                
-           {
+                  <div className="row">                
+              {
               
                     casts.slice(0, 12).map((cast, i) => { 
                      return ( 
-                        <div className="col-lg-4 col-md-4 col-sm-4">
+                       <div className="col-lg-4 col-md-4 col-sm-4">
 
-                    <div className="box">
-                     <img src={`${TMDB.IMG_PATH + 'w185/' +cast.profile_path}`} alt={cast.original_title} />
-                     <p className="text-center"><strong>Name: </strong> {cast.name}</p>
-                     <p className="text-center red-text"><strong>Character: </strong> {cast.character}</p>
-                    </div>
-                    <br></br>
-                     </div>
+                          <div className="box">
+                      <img src={`${`${TMDB.IMG_PATH  }w185/${ cast.profile_path}`}`} alt={cast.original_title} />
+                      <p className="text-center">
+                <strong>Name: </strong> 
+                {' '}
+                {cast.name}
+                      </p>
+                      <p className="text-center red-text">
+                <strong>Character: </strong> 
+                {' '}
+                {cast.character}
+                      </p>
+                          </div>
+                          <br />
+                       </div>
 
                      ); 
 
@@ -82,8 +76,8 @@ class Credits extends Component {
             }   
 
 
+                  </div>
               </div>
-             </div>
           );
   
   
@@ -92,23 +86,23 @@ class Credits extends Component {
       }else if(this.state.error !== 0){
        
               return (
-              <div>
+                <div>
                   <Error />
-              </div>
+                </div>
               );
   
       }else{
           return (
-              <div>
+            <div>
                 <Triple />
-              </div>
+            </div>
               )
     }
 
 
     return (
       <div>
-          <Triple />
+        <Triple />
       </div>
     );
   }
