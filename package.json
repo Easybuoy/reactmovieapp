@@ -8,6 +8,8 @@
     "@babel/preset-react": "^7.0.0",
     "@material-ui/core": "^3.0.3",
     "@material-ui/icons": "^3.0.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
     "grommet": "^1.11.0",
     "jest": "^24.5.0",
     "mdbreact": "^4.7.0",
@@ -22,10 +24,17 @@
     "build": "react-scripts build",
     "test": "jest",
     "coveralls": "jest --coverage && cat coverage/lcov.info | coveralls",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src"
   },
   "devDependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2"
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.2",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.16.4"
   }
 }
