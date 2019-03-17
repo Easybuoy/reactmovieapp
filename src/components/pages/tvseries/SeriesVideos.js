@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import  { Container } from 'mdbreact';
-import TMDB from '../../../config/keys';
 import { Triple } from 'react-preloading-component';
+import TMDB from '../../../config/keys';
 import Error from '../../error/Error';
-// import { Link } from 'react-router-dom';
 
 class SeriesVideos extends Component {
   constructor(props) {
@@ -31,41 +30,36 @@ componentDidMount(){
       })
 }
 
-
-    trimText = (text) => {
-       return text.substring(0, 100) + '...';
-    }
-
   render(){
 
     if(this.state.seriesvideos !== 0){
-      let seriesvideos =  this.state.seriesvideos.results;
+      const seriesvideos =  this.state.seriesvideos.results;
 
       if(seriesvideos){
 
         return(
 
           <Container>
-              <h1>VIDEOS</h1>
-              <hr></hr>
+            <h1>VIDEOS</h1>
+            <hr />
             <div className="row">   
                 
-                {
+              {
                     
                     seriesvideos.map((video, i) => {
 
            return (
-            <div className="col-lg-4 col-md-4 col-sm-4">
-                <div className="embed-responsive embed-responsive-16by9">
-    <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${video.key}`} allowFullScreen title={video.name} ></iframe>
-                </div>
-                <br></br> 
-            </div>
+             <div className="col-lg-4 col-md-4 col-sm-4">
+               <div className="embed-responsive embed-responsive-16by9">
+                 <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${video.key}`} allowFullScreen title={video.name} />
+               </div>
+               <br /> 
+             </div>
            ) 
         })}
-        </div>
+            </div>
        
-            <hr></hr>
+            <hr />
           </Container>
         );
 
@@ -75,23 +69,22 @@ componentDidMount(){
     }else if(this.state.error !== 0){
     
             return (
-            <div>
+              <div>
                 <Error />
-            </div>
+              </div>
             );
 
     }else{
         return (
-            <div>
-             <Triple />
+          <div>
+            <Triple />
 
-            </div>
+          </div>
             );
     }
-    // console.log(this.state)    
-    // return {render};
+    
     return(
-      //preloader
+      // preloader
       <Triple />
     );
   }
