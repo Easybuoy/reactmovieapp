@@ -4,7 +4,7 @@ import './Navigation.css';
 import navigationimg from './navigationimg.JPG';
 
 // Container,
-class Navigation extends React.Component {
+export class Navigation extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
