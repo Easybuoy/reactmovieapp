@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import  {Carousel, CarouselInner, Container } from 'mdbreact';
+import { Triple } from 'react-preloading-component';
 import TMDB from '../../config/keys';
 import CarouselItemList from './CarouselItemList';
-import { Triple } from 'react-preloading-component';
 import Error from '../error/Error';
 // import { Link } from 'react-router-dom';
 
-class CarouselPage extends Component {
+export class CarouselPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ componentDidMount(){
   render(){
 
     if(this.state.now_playing !== 0){
-      let url =  this.state.now_playing.results;
+      const url =  this.state.now_playing.results;
       // let itemId = 0;
       // let render = '';
       if(url){
@@ -57,18 +57,19 @@ componentDidMount(){
         // });
 
         return(
-          <Container fluid >
+          <Container fluid>
             <Carousel
               activeItem={1}
               length={20}
-              showControls={true}
+              showControls
               showIndicators={false}
-              className="z-depth-1">
+              className="z-depth-1"
+            >
               <CarouselInner>
 
                 {url.map((movie, i) => { 
                     
-               let itemId = i + 1;
+               const itemId = i + 1;
                 // itemId = itemId + 1;
                                   // console.log(movie);
                                   // console.log(i); 
@@ -76,7 +77,7 @@ componentDidMount(){
            return (<CarouselItemList movie={movie} itemId={itemId} />) 
         })}
 
-        {/* { url.forEach(function(element) {
+                {/* { url.forEach(function(element) {
           
 
           let posterimgurl =  'https://image.tmdb.org/t/p/w500/' + element.poster_path;
@@ -91,7 +92,7 @@ componentDidMount(){
 
           }) } */}
           
-            </CarouselInner>
+              </CarouselInner>
             </Carousel>
           </Container>
         );
@@ -118,7 +119,7 @@ componentDidMount(){
     }
     
     return(
-      //preloader
+      // preloader
       <Triple />
     );
   }

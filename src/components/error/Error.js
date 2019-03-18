@@ -22,23 +22,24 @@ class Error extends Component {
 
         }
     }
+
     render() {
       
       return (
         <div>
-            {/* <h1>{this.props.errorMessage} </h1> */}
-            <div className="container">
+          {/* <h1>{this.props.errorMessage} </h1> */}
+          <div className="container">
             
             {/* <Button className="primary-color"> {this.props.buttonText}</a></Button> */}
-            <a  href= '.'>
+            <a href='.'>
               <Button style={{'color': 'white'}} variant="contained" className="danger-color">
-              <Fa icon="refresh" className="fav" />
+                <Fa icon="refresh" className="fav" />
               Reload
               
               </Button>
-              </a>
-              </div>
-              <br></br>
+            </a>
+          </div>
+          <br />
   
         </div>
       );
